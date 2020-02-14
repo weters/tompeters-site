@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>TAP/room</title>
+</head>
+<body>
+<main>
+    <section class="hero">
+        <header>
+            <div class="content">
+                <h1>TAP/room</h1>
+
+                <p>I'm Thomas A. Peters, a software dev from Buffalo, NY. Some technologies I currently love are Go and
+                    Kubernetes. You can download my apps, <a
+                            href="https://apps.apple.com/us/app/names-in-a-hat/id310533991?ls=1">Names in a Hat</a> and
+                    <a href="https://apps.apple.com/us/app/teddy-draw/id1488058982?ls=1">Teddy Draw</a>, on the App
+                    Store. I recently launched <a href="https://sqmgr.com/">SqMGR</a>.
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="https://github.com/weters">GitHub</a>
+                <li><a href="https://linkedin.com/in/thomas-peters">LinkedIn</a>
+                <li><a href="https://twitter.com/weters">Twitter</a>
+                <li><a href="https://keybase.io/weters">Keybase</a>
+            </ul>
+        </nav>
+
+        <i class="chevron fas fa-chevron-down"></i>
+    </section>
+    <div class="languages">
+        <section class="language go">
+            <div class="details">
+                <h2>Go</h2>
+
+                <p>I currently use Go for the majority of my personal and open-source projects.</p>
+
+                <ul>
+                    <li><strong><a href="https://github.com/sqmgr/sqmgr-api/">SqMGR</a></strong> is a site for managing
+                        football squares pools.
+                    </li>
+                    <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is an application for
+                        agile scrum planning sessions.
+                    </li>
+                    <li><strong><a href="https://github.com/synacor/argon2id">argon2id</a></strong> is an open-source
+                        library for hashing passwords using Argon.
+                    </li>
+                    <li><strong><a href="https://github.com/weters/pwned">pwned</a></strong> is a library for checking
+                        if a user's password has been compromised using the haveibeenpwned service.
+                    </li>
+                </ul>
+            </div>
+            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/pkg/smjwt/smjwt.go#L85">// Sign will sign the JWT claims.
+// You MUST call LoadPrivateKey() first
+func (s *SMJWT) Sign(claims jwt.Claims) (string, error) {
+  if s.privateKey == nil {
+    return "", ErrNoPrivateKeySpecified
+  }
+
+  token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
+  return token.SignedString(s.privateKey)
+}</pre>
+        </section>
+        <section class="language javascript">
+            <div class="details">
+                <h2>JavaScript</h2>
+
+                <p>The bulk of my professional experience has been writing backend services, but I also enjoy building
+                    beautiful, mobile-friendly front-ends with Vue, React/Preact, and vanilla JS.</p>
+
+                <ul>
+                    <li><strong><a href="https://github.com/sqmgr/sqmgr-vue">SqMGR</a></strong> is a single-page
+                        application built using Vue.
+                    </li>
+                    <li><strong><a href="https://tocbuffalo.com/">Tournament of Champions</a></strong> was built using
+                        vanilla JS.
+                    </li>
+                    <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is a tool for measuring
+                        story point estimations in agile.
+                    </li>
+                </ul>
+            </div>
+            <pre class="code"
+                 data-src="https://github.com/sqmgr/sqmgr-vue/blob/master/src/register-service-worker.js#L20">navigator.serviceWorker.register('/sw.js')
+  .then(reg => {
+    reg.addEventListener("updatefound", () => {
+      if (!navigator.serviceWorker.controller) {
+        return
+      }
+
+      const worker = reg.installing
+      worker.addEventListener("statechange", () => {
+        if (worker.state === "installed") {
+          bus.$emit('refresh-needed')
+        }
+      })
+    })
+  })</pre>
+        </section>
+
+        <section class="language swift">
+            <div class="details">
+                <h2>Swift</h2>
+
+                <p>I have two apps available on the App Store.</p>
+
+                <ul>
+                    <li><strong><a href="https://namesinahatapp.com">Names in a Hat</a></strong> is an app I started back in 2009 for
+					drawing randomized names. I've kept it up-to-date through the years to keep pace with Apple's best practices and aesthetics.</li>
+                    <li><strong><a href="https://apps.apple.com/us/app/teddy-draw/id1488058982">Teddy Draw</a></strong>
+                        is a toddler drawing app I built so my son could draw without dealing with obnoxious ads and an overly complicated interface.
+                    </li>
+                </ul>
+            </div>
+            <pre class="code">@IBInspectable var isSelected: Bool = false {
+    didSet {
+        if isSelected {
+            self.checkmark.transform =
+                CGAffineTransform(scaleX: 0.2, y: 0.2)
+        }
+
+        UIView.animate(withDuration: 0.25, animations: {
+            if self.isSelected {
+                self.checkmark.transform = .identity
+                self.checkmark.alpha = 1
+                self.checkmark.isHidden = false
+            // ...</pre>
+        </section>
+
+        <section class="language perl">
+            <div class="details">
+                <h2>Perl</h2>
+
+                <p>I have over 15 years of experience writing highly performant, modern Perl.</p>
+
+                <ul>
+                    <li>Built RESTful APIs that serve billions of requests per month using Apache Solr and Cassandra.
+                    </li>
+                    <li>Built an ETL system for ingesting movies, tv shows, and news from thousands of sources.</li>
+                    <li>Open sourced <code>Test::MockPackages</code>, which assists in unit test development.</li>
+                </ul>
+            </div>
+            <pre class="code"
+                 data-src="https://github.com/synacor/test-mockpackages/blob/master/lib/Test/MockPackages/Mock.pm#L140">sub called {
+    my ( $self, $called ) = @ARG;
+
+    if ( !looks_like_number( $called ) || $called < -1 ) {
+        croak( '$called must be an integer >= -1' );
+    }
+
+    $self->{_called} = $called;
+
+    return $self->_validate();
+}</pre>
+        </section>
+
+        <section class="language databases">
+            <div class="details">
+                <h2>Databases</h2>
+
+                <p>PostgreSQL is my go-to RDBMS. I also have experience with MySQL/MariaDB, as well non-relational
+                    DBs like Solr (search), Riak (key/value), and Cassandra (columnar).</p>
+            </div>
+            <pre class="code"
+                 data-src="https://github.com/sqmgr/sqmgr-api/blob/master/sql/0002_adds_functions.up.sql#L43">CREATE FUNCTION new_token(_token text) RETURNS boolean
+  LANGUAGE plpgsql
+AS $$
+BEGIN
+  LOCK TABLE tokens IN SHARE UPDATE EXCLUSIVE MODE;
+  PERFORM 1 FROM tokens WHERE token = _token;
+  IF FOUND THEN
+    RETURN FALSE;
+  END IF;
+
+  INSERT INTO tokens (token) VALUES (_token);
+  RETURN TRUE;
+END;
+$$;</pre>
+        </section>
+
+        <section class="language containers">
+            <div class="details">
+                <h2>Containers and Orchestration</h2>
+
+                <p>I'm a huge proponent of Docker and Kubernetes. I use GitHub Actions to test and build containers, and then
+				then deploy those images into a Kubernetes cluster.</p>
+            </div>
+            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/Dockerfile">
+FROM golang:1.13 AS build-go
+WORKDIR /build
+COPY go.* ./
+RUN go mod download
+COPY cmd/ cmd/
+COPY internal/ internal/
+COPY pkg/ pkg/
+RUN CGO_ENABLED=0 GOOS=linux \
+    go build github.com/sqmgr/sqmgr-api/cmd/sqmgr-api
+
+FROM alpine:latest
+...</pre>
+        </section>
+    </div>
+</main>
+<footer>
+    <p>You can find me online here: <a href="https://github.com/weters">GitHub</a>,
+        <a href="https://linkedin.com/in/thomas-peters">LinkedIn</a>,
+        <a href="https://twitter.com/weters">Twitter</a>, and
+        <a href="https://keybase.io/weters">Keybase</a>.
+    </p>
+
+    <p class="version" data-commit-hash="<%= commitHash %>"><%= buildDate %></p>
+</footer>
+<script src="https://kit.fontawesome.com/8e4ae7f326.js" crossorigin="anonymous"></script>
+</body>
+</html>

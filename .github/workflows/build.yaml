@@ -1,0 +1,59 @@
+name: Build
+on:
+  push:
+    branches: [master]
+env:
+  IMAGE: docker.pkg.github.com/weters/taproom/taproom
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker log in
+      run:  echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+    - name: set commit hash
+      run: echo "::set-env name=COMMIT_HASH::$(git rev-list -1 HEAD)"
+    - name: docker-build
+      run: |
+        docker build \
+          --build-arg commitHash=$COMMIT_HASH \
+          --build-arg buildDate=$(TZ="America/New_York" date +%Y-%m-%d) \
+          -t $IMAGE:$(git rev-list -1 HEAD) \
+          .
+        docker tag $IMAGE:$(git rev-list -1 HEAD) $IMAGE:latest
+    - name: docker-push
+      run: |
+        docker push $IMAGE:$(git rev-list -1 HEAD)
+        docker push $IMAGE:latest
+
+  deploy:
+    name: 'Deploy to Production'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - run: git fetch origin +refs/tags/*:refs/tags/*
+
+      - name: set image name
+        run: echo "::set-env name=IMAGE_TAG::$IMAGE:$(git rev-list -1 HEAD)"
+
+      - name: docker log in
+        run:  echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+
+      - name: k8s-deploy
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: set image deploy taproom taproom=${{ env.IMAGE_TAG }} --record
+
+      - name: k8s-rollout
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: rollout status deploy taproom

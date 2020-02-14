@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: taproom
+  labels:
+    app: taproom
+spec:
+  rules:
+    - host: taproom.us
+      http:
+        paths:
+          - backend:
+              serviceName: taproom
+              servicePort: 80
+            path: /
+  tls:
+    - hosts:
+        - taproom.us
+      secretName: tls-taproom

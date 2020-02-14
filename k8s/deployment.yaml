@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taproom
+  labels:
+    app: taproom
+spec:
+  selector:
+    matchLabels:
+      app: taproom
+  template:
+    metadata:
+      labels:
+        app: taproom
+    spec:
+      containers:
+      - name: taproom
+        image: docker.pkg.github.com/weters/taproom/taproom:latest
+      imagePullSecrets:
+      - name: github
