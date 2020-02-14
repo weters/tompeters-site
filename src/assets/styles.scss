@@ -45,7 +45,7 @@ header {
 }
 
 section.hero {
-  background-image:    url(https://taproom.us/images/bg1.jpg);
+  background-image:    url(./bg1.jpg);
   background-size:     cover;
   background-position: center center;
   height:              calc(var(--computed-vh, 1vh) * 100);

@@ -1,7 +1,7 @@
-import './dank-mono.css'
-import './styles.scss'
-import CodeWriter from "./CodeWriter";
-import ViewHeightObserver from "./ViewHeightObserver";
+import './assets/dank-mono.css'
+import './assets/styles.scss'
+import './classes/ViewHeightObserver'
+import CodeWriter from "./classes/CodeWriter";
 
 const onLoad = () => {
     if (process.env.NODE_ENV === 'production') {
@@ -9,8 +9,6 @@ const onLoad = () => {
             navigator.serviceWorker.register('sw.js')
         }
     }
-
-    new ViewHeightObserver()
 
     const observer = new IntersectionObserver((sections) => {
         sections.forEach(section => {
