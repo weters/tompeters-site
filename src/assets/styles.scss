@@ -184,11 +184,12 @@ div.languages {
 }
 
 div.code-container {
-  position:   relative;
-  transition: all 400ms;
+  align-self: start;
   opacity:    0;
-  transform:  translateX(200px);
   overflow:   hidden;
+  position:   relative;
+  transform:  translateX(200px);
+  transition: all 400ms;
 
   a {
     display:  block;
@@ -199,7 +200,6 @@ div.code-container {
   }
 
   pre {
-    align-self:       center;
     overflow:         hidden;
     background-color: #111;
     color:            white;
@@ -253,7 +253,7 @@ footer {
   p.version {
     position: absolute;
     margin:   0;
-    bottom:      var(--spacing);
+    bottom:   var(--spacing);
     right:    var(--spacing);
     color:    rgba(white, 0.2);
   }
