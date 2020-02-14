@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -18,6 +19,9 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(),
         new SitemapWebpackPlugin('https://taproom.us/', [ '/' ]),
+        new CopyWebpackPlugin([{
+            from: 'public',
+        }]),
     ],
     devtool: 'inline-source-map',
     module: {
