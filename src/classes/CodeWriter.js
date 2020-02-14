@@ -99,7 +99,7 @@ export default class CodeWriter {
         // check to see if there's more text to output
         if (this.index <= this.text.length) {
             // 85% of the time, we'll use a delay of 10-40ms.
-            // 15% of the time, we'll use a delay of 10-125ms
+            // 15% of the time, we'll use a delay of 10-135ms
 
             let maxVal = 30
 
