@@ -5,16 +5,20 @@ export default class CodeWriter {
     /**
      * Creates a new CodeWriter object. The element passed in will have it's text content
      * typed out to the screen as if a user is typing—albeit quickly—in real-time.
-     * @param elem The element to type out
+     * @param elem {Element} The element to type out
+     * @param minMS {Number} The minimum ms between key presses
+     * @param baseMS {Number} Max ms between key presses
      */
-    constructor(elem) {
+    constructor(elem, minMS = 10, baseMS = 30) {
         this.elem = elem
         this.text = elem.textContent
         this.index = 0
         this.elem.style.display = 'none'
         this.fontSize = null
         this.ready = false
-        this.isTyping = false
+        this.promise = null
+        this.minMS = minMS
+        this.baseMS = baseMS
 
         // set the height of the element to the final code block
         // note: the display change is to get around an iOS safari bug where
@@ -52,23 +56,29 @@ export default class CodeWriter {
      * This method will call itself until this.ready is true
      */
     run() {
-        if (!this.ready) {
-            window.requestAnimationFrame(() => this.run())
-            return
+        if (this.promise) {
+            return this.promise
         }
 
-        if (!this.isTyping) {
-            this._type()
-        }
+        return this.promise = new Promise(resolve => {
+            this._type(resolve)
+        })
     }
 
     /**
      * Simulate the typing to the screen
      * Each pass-through will output one letter. This method is recursively called
-     * until all letters have been typed.
+     * until all letters have been typed. Once, typing is finished, the resolve
+     * function will be called.
+     *
+     * @param resolve {Function} The resolve function
+     * @private
      */
-    _type() {
-        this.isTyping = true
+    _type(resolve) {
+        if (!this.ready) {
+            window.requestAnimationFrame(() => this._type(resolve))
+            return
+        }
 
         const textPart = this.text.substr(this.text, this.index++)
         this.elem.innerHTML = ''
@@ -98,17 +108,22 @@ export default class CodeWriter {
 
         // check to see if there's more text to output
         if (this.index <= this.text.length) {
-            // 85% of the time, we'll use a delay of 10-40ms.
-            // 15% of the time, we'll use a delay of 10-135ms
+            // 85% of the time, we'll use our base delay
+            // 15% of the time, we'll use a base*4 delay
 
-            let maxVal = 30
+            let maxVal = this.baseMS
 
             if (Math.floor(Math.random() * 100) < 15) {
-                maxVal = 125
+                maxVal *= 4
             }
 
-            const delay = Math.floor(Math.random() * maxVal) + 10
-            setTimeout(() => this._type(), delay)
+            const delay = Math.floor(Math.random() * maxVal) + this.minMS
+            setTimeout(() => this._type(resolve), delay)
+
+            return
         }
+
+        resolve(this.elem)
+        return
     }
 }

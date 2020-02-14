@@ -11,4 +11,5 @@ ENV COMMIT_HASH=$commitHash BUILD_DATE=$buildDate
 RUN npm run build
 
 FROM nginx:latest
+COPY nginx.default.conf /etc/nginx/conf.d/default.conf
 COPY --from=node-build /build/dist /usr/share/nginx/html
