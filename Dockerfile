@@ -4,6 +4,7 @@ COPY package*.json ./
 RUN npm i
 COPY webpack.*.js ./
 COPY src/ ./src/
+COPY public/ ./public/
 ARG commitHash
 ARG buildDate
 ENV COMMIT_HASH=$commitHash BUILD_DATE=$buildDate
