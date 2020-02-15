@@ -10,6 +10,10 @@
 
 html, body {
   font-family: 'Roboto', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html {
@@ -211,12 +215,8 @@ div.code-container {
       font-size: 14px;
     }
 
-    @media (min-width: 801px) and (max-width: 1000px) {
+    @media (max-width: 1000px) {
       font-size: 12px;
-    }
-
-    @media (max-width: 800px) {
-      font-size: 9px;
     }
   }
 }

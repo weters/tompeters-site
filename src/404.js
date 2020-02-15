@@ -12,7 +12,6 @@ const onLoad = () => {
     items.forEach(item => item.style.display = 'none')
 
     const shuffledItems = shuffle(items)
-    console.log(shuffledItems)
     startAnimations(-1, shuffledItems)
 }
 
