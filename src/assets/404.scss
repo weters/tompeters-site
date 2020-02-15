@@ -27,6 +27,7 @@ header {
   h1 {
     font-weight: normal;
     padding: $spacing/2 $spacing;
+    @include env-padding($spacing);
   }
 }
 
@@ -60,6 +61,7 @@ h2 {
 
 footer {
   padding: $spacing;
+  @include env-padding($spacing);
 }
 
 a {
@@ -68,7 +70,8 @@ a {
 
 main {
   background-color: $red;
-  padding:          $spacing;
+  padding: $spacing;
+  @include env-padding($spacing);
 
   div.console {
     background-color: #111;

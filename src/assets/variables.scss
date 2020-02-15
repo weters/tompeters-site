@@ -6,3 +6,13 @@ $purple: #5E35B1;
 $green: #43A047;
 $orange: #FB8C00;
 $steel: #546E7A;
+
+@mixin env-padding($padding) {
+  @supports (width: min(0px)) {
+    /* scss doesn't support env() inside max. m#{a}x is a workaround
+       found here: https://github.com/webpack-contrib/sass-loader/issues/528#issuecomment-362259216
+     */
+    padding-left: m#{a}x($padding, env(safe-area-inset-left));
+    padding-left: m#{a}x($padding, env(safe-area-inset-right));
+  }
+}

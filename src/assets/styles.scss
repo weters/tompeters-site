@@ -36,6 +36,8 @@ header {
   position:         absolute;
   width:            100%;
 
+  @include env-padding($spacing);
+
   h1 {
     font-family:   'Reenie Beanie', sans-serif;
     font-style:    italic;
@@ -121,6 +123,8 @@ div.languages {
     margin-top:            $spacing;
     width:                 100vw;
     overflow:              hidden;
+
+    @include env-padding($spacing);
 
     @media (max-width: 723px) {
       display: block;
@@ -250,6 +254,8 @@ footer {
   min-height: 150px;
   padding:    $spacing;
   position:   relative;
+
+  @include env-padding($spacing);
 
   p.version {
     position: absolute;
