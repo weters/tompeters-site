@@ -17,8 +17,7 @@ module.exports = {
             filename: "index.html",
             chunks: ['main'],
             templateParameters: {
-                'commitHash': process.env.COMMIT_HASH || 'dev',
-                'buildDate': process.env.BUILD_DATE || '0000-00-00',
+                'version': process.env.VERSION || 'v0-deadbeef',
             }
         }),
         new HtmlWebpackPlugin({

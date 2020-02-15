@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: docker log in
       run:  echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
     - name: set commit hash
@@ -17,8 +19,7 @@ jobs:
     - name: docker-build
       run: |
         docker build \
-          --build-arg commitHash=$COMMIT_HASH \
-          --build-arg buildDate=$(TZ="America/New_York" date +%Y-%m-%d) \
+          --build-arg version="v$(git rev-list --count HEAD)-$(git rev-list --abbrev-commit -1 HEAD)" \
           -t $IMAGE:$(git rev-list -1 HEAD) \
           .
         docker tag $IMAGE:$(git rev-list -1 HEAD) $IMAGE:latest
