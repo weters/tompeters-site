@@ -6,6 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: 'development',
+    output: {
+        publicPath: "/",
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
