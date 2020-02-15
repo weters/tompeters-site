@@ -4,6 +4,8 @@ metadata:
   name: taproom
   labels:
     app: taproom
+  annotations:
+    nginx.ingress.kubernetes.io/from-to-www-redirect: 'true'
 spec:
   rules:
     - host: taproom.us
