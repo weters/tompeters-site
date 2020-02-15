@@ -152,13 +152,13 @@ func (s *SMJWT) Sign(claims jwt.Claims) (string, error) {
                  data-src="https://github.com/synacor/test-mockpackages/blob/master/lib/Test/MockPackages/Mock.pm#L140">sub called {
     my ( $self, $called ) = @ARG;
 
-    if ( !looks_like_number( $called ) || $called < -1 ) {
-        croak( '$called must be an integer >= -1' );
+    if ( !looks_like_number( $called ) || $called &lt; -1 ) {
+        croak( '$called must be an integer &gt;= -1' );
     }
 
-    $self->{_called} = $called;
+    $self-&gt;{_called} = $called;
 
-    return $self->_validate();
+    return $self-&gt;_validate();
 }</pre>
         </section>
 
