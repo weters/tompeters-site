@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Reenie+Beanie|Roboto:400,700');
+@import './variables';
 
 * {
   padding: 0;
@@ -10,6 +11,19 @@
 html, body {
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
+}
+
+header {
+  background-image: url('./bg1.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: $spacing*3 0 $spacing;
+  margin-bottom: $spacing;
+
+  h1 {
+    font-weight: normal;
+    padding: $spacing/2 $spacing;
+  }
 }
 
 body {
@@ -24,6 +38,7 @@ code {
 h1 {
   font-family: 'Reenie Beanie', cursive;
   font-size: 3em;
+  background-color: rgba(33, 150, 243, 0.8);
 
   a {
     color: white;
@@ -35,26 +50,26 @@ h1 {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, main {
-  margin-bottom: 20px;
+h2 {
+  margin-bottom: $spacing;
 }
 
-header, footer {
-  padding: 20px;
+footer {
+  padding: $spacing;
 }
 
 a {
-  color: rgb(33, 150, 243);
+  color: $blue;
 }
 
 main {
-  background-color: rgba(33, 150, 243, 0.8);
-  padding:          20px;
+  background-color: $red;
+  padding:          $spacing;
 
   div.console {
     background-color: #111;
     color:            #ddd;
-    padding:          20px;
+    padding:          $spacing;
     border-radius:    5px;
 
     pre {
@@ -68,7 +83,7 @@ main {
 
     pre.output {
       span.error {
-        color: red;
+        color: $red;
       }
     }
   }

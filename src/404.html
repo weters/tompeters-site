@@ -8,17 +8,62 @@
 <body>
 <header>
     <h1><a href="/">TAP/room</a></h1>
-
-    <h2>Page Not Found</h2>
 </header>
 <main>
-        <div class="console">
-            <div class="command-container">
-                <pre class="command">$ clang NOTFOUND</pre>
-            </div>
-            <pre class="output">clang: <span class="error">error:</span> no such file or directory: 'NOTFOUND'
+    <h2>404 Page Not Found</h2>
+
+    <div class="console">
+        <div class="error-list">
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ clang NOTFOUND</pre>
+                </div>
+                <pre class="output">clang: <span class="error">error:</span> no such file or directory: 'NOTFOUND'
 clang: <span class="error">error:</span> no input files</pre>
+            </div>
+
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ gcc NOTFOUND</pre>
+                </div>
+                <pre class="output"><strong>gcc:</strong> <span class="error">error:</span> No such file or directory
+<strong>gcc:</strong> <span class="error">fatal error:</span> no input files
+compilation terminated.</pre>
+            </div>
+
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ go build NOTFOUND</pre>
+                </div>
+                <pre class="output">can't load package: package NOTFOUND: cannot find package "NOTFOUND" in any of:
+/usr/local/go/src/foo (from $GOROOT)
+/home/taproom/go/src/foo (from $GOPATH)</pre>
+            </div>
+
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ python NOTFOUND</pre>
+                </div>
+                <pre class="output">python: can't open file 'NOTFOUND': [Errno 2] No such file or directory</pre>
+            </div>
+
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ javac NOTFOUND</pre>
+                </div>
+                <pre class="output">error: file not found: NOTFOUND
+Usage: javac &lt;options&gt; &lt;source files&gt;
+use --help for a list of possible options</pre>
+            </div>
+
+            <div class="item">
+                <div class="command-container">
+                    <pre class="command">$ make NOTFOUND</pre>
+                </div>
+                <pre class="output">make: Nothing to be done for `NOTFOUND'.</pre>
+            </div>
         </div>
+    </div>
 </main>
 
 <footer>
