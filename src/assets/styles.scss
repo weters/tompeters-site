@@ -9,11 +9,11 @@
 }
 
 html, body {
-  font-family: 'Roboto', sans-serif;
+  font-family:              'Roboto', sans-serif;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -moz-text-size-adjust:    100%;
+  -ms-text-size-adjust:     100%;
+  text-size-adjust:         100%;
 }
 
 html {
@@ -131,10 +131,6 @@ div.languages {
     @include env-padding($spacing);
 
     @media (max-width: 723px) {
-      pre {
-        font-size: 12px;
-      }
-
       display: block;
     }
 
@@ -237,6 +233,10 @@ div.code-container {
 
     @media (max-width: 834px) {
       font-size: 9px;
+    }
+
+    @media (min-width: 501px) and (max-width: 723px) {
+      font-size: 12px;
     }
   }
 }
