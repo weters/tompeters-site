@@ -131,6 +131,10 @@ div.languages {
     @include env-padding($spacing);
 
     @media (max-width: 723px) {
+      pre {
+        font-size: 12px;
+      }
+
       display: block;
     }
 
@@ -223,11 +227,15 @@ div.code-container {
       font-size: 14px;
     }
 
-    @media (min-width: 801px) and (max-width: 1000px) {
+    @media (min-width: 925px) and (max-width: 1000px) {
       font-size: 12px;
     }
 
-    @media (max-width: 800px) {
+    @media (min-width: 835px) and (max-width: 924px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 834px) {
       font-size: 9px;
     }
   }
