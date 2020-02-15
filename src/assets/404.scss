@@ -72,6 +72,10 @@ main {
     padding:          $spacing;
     border-radius:    5px;
 
+    div.item {
+      display: none;
+    }
+
     pre {
       font-family: 'dm', monospace;
       white-space: pre-wrap;
