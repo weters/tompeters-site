@@ -1,6 +1,7 @@
 /// SITE INFORMATION
 
     Author: Thomas Peters
+	GitHub: https://github.com/weters
     Twitter: https://twitter.com/weters
     LinkedIn: https://linkedin.com/in/thomas-peters
     Location: Getzville, NY, USA
