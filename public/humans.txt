@@ -1,6 +1,6 @@
 /// SITE INFORMATION
 
-    Author: Tom Peters
+    Author: Thomas Peters
     Twitter: https://twitter.com/weters
     LinkedIn: https://linkedin.com/in/thomas-peters
     Location: Getzville, NY, USA
