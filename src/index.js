@@ -41,6 +41,10 @@ const onLoad = () => {
                 a.href = src
                 const i = a.appendChild(document.createElement('i'))
                 i.classList.add('fas', 'fa-code-branch')
+
+                const span = a.appendChild(document.createElement('span'))
+                span.classList.add('view-source')
+                span.textContent = `View Source`
             }
 
             section.codeWriter = new CodeWriter(section.querySelector('pre'))

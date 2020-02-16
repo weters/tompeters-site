@@ -207,6 +207,10 @@ div.code-container {
     color:    rgba(255, 255, 255, 0.7);
   }
 
+  span.view-source {
+    display: none;
+  }
+
   pre {
     overflow:         hidden;
     background-color: #111;
