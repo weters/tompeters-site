@@ -125,7 +125,6 @@ div.languages {
     grid-gap:              $spacing;
     padding:               $spacing;
     margin-top:            $spacing;
-    width:                 100vw;
     overflow:              hidden;
 
     @include env-padding($spacing);
