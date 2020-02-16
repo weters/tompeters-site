@@ -1,0 +1,7 @@
+/// SITE INFORMATION
+
+    Author: Tom Peters
+    Twitter: https://twitter.com/weters
+    LinkedIn: https://linkedin.com/in/thomas-peters
+    Location: Getzville, NY, USA
+    Technologies: HTML, CSS/SCSS, JavaScript, webpack, Workbox, GitHub Actions, Docker, Kubernetes
