@@ -24,14 +24,22 @@ export default class CodeWriter {
         // note: the display change is to get around an iOS safari bug where
         // the height is calculated without the media query font-size applied
         window.requestAnimationFrame(() => {
-            // ready prevents run() from running before we can set the final height
-            this.ready = true
             this.elem.style.display = 'block'
-            this.elem.style.height = this.elem.clientHeight + 'px'
-            this.elem.innerHTML = ''
-            this.fontSize = getComputedStyle(this.elem).fontSize
+            // set opacity to 0 to prevent a flash while waiting for next animation frame
+            this.elem.style.opacity = 0
 
-            window.addEventListener("resize", () => this.resizeElement())
+            // the second requestAnimationFrame is to get around a Chrome bug
+            // where the clientHeight is 10px smaller than it should be after setting display=block.
+            window.requestAnimationFrame(() => {
+                // ready prevents run() from running before we can set the final height
+                this.ready = true
+                this.elem.style.opacity = 1
+                this.elem.style.height = this.elem.clientHeight + 'px'
+                this.elem.innerHTML = ''
+                this.fontSize = getComputedStyle(this.elem).fontSize
+
+                window.addEventListener("resize", () => this.resizeElement())
+            })
         })
     }
 
