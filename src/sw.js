@@ -8,22 +8,6 @@ skipWaiting()
 clientsClaim()
 
 registerRoute(
-    new RegExp('^https://[^.]+.fontawesome.com/'),
-    new CacheFirst({
-        cacheName: 'font-awesome',
-        plugins: [
-            new CacheableResponsePlugin({
-                statuses: [0, 200],
-            }),
-            new ExpirationPlugin({
-                maxAgeSeconds: 60 * 60 * 24 * 365,
-                maxEntries: 30,
-            }),
-        ],
-    }),
-)
-
-registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
     new StaleWhileRevalidate({
         cacheName: 'google-fonts-stylesheets',
