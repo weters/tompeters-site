@@ -2,6 +2,7 @@ import './assets/dank-mono.css'
 import './assets/styles.scss'
 import './classes/ViewHeightObserver'
 import CodeWriter from "./classes/CodeWriter";
+import { mdiChevronDoubleDown as chevron } from "@mdi/js";
 
 const onLoad = () => {
     if (process.env.NODE_ENV === 'production') {
@@ -9,6 +10,8 @@ const onLoad = () => {
             navigator.serviceWorker.register('sw.js')
         }
     }
+
+    document.querySelector('svg path').setAttribute('d', chevron)
 
     const observer = new IntersectionObserver((sections) => {
         sections.forEach(section => {

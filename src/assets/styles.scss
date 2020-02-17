@@ -286,13 +286,18 @@ footer {
 }
 
 .chevron {
-  color:     $blue;
-  font-size: 40px;
-  position:  absolute;
-  bottom:    0;
-  left:      50%;
-  transform: translateX(-50%);
   animation: pulse infinite 3s;
+  filter: drop-shadow(1px 2px 3px rgba(black, 0.3));
+  bottom:    0;
+  height:    50px;
+  left:      50%;
+  position:  absolute;
+  transform: translateX(-50%);
+  width:     50px;
+
+  path {
+    fill:   $blue;
+  }
 }
 
 @keyframes pulse {
