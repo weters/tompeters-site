@@ -8,7 +8,7 @@ skipWaiting()
 clientsClaim()
 
 registerRoute(
-    /bg\d+\.jpg$/,
+    /\.jpg$/,
     new CacheFirst({
         cacheName: 'images',
         plugins: [
