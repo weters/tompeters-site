@@ -8,6 +8,19 @@ skipWaiting()
 clientsClaim()
 
 registerRoute(
+    /bg\d+\.jpg$/,
+    new CacheFirst({
+        cacheName: 'images',
+        plugins: [
+            new ExpirationPlugin({
+                maxEntries: 60,
+                maxAgeSeconds: 365 * 24 * 60 * 60, // 365 Days
+            }),
+        ],
+    })
+);
+
+registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
     new StaleWhileRevalidate({
         cacheName: 'google-fonts-stylesheets',
