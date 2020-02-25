@@ -277,7 +277,10 @@ footer {
     margin:   0;
     bottom:   $spacing;
     right:    $spacing;
-    color:    rgba(white, 0.2);
+
+    a {
+      color:    rgba(white, 0.2);
+    }
 
     @supports (right: m#{a}x(0px)) {
       right: m#{a}x($spacing, env(safe-area-inset-right, $spacing));
