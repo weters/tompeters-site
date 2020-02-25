@@ -28,4 +28,4 @@ $ npm run serve
 $ npm run build
 ```
 
-Note: when compiling in Docker, two environment variables are set: `COMMIT_HASH` and `BUILD_DATE`. Those values are used in the footer of the site.
+Note: when compiling in Docker, a `VERSION` environment variable is set. That value is used in the footer of the site.
