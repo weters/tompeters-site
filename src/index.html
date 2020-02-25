@@ -40,7 +40,8 @@
                     Kubernetes. You can download my apps, <a
                             href="https://apps.apple.com/us/app/names-in-a-hat/id310533991?ls=1">Names in a Hat</a> and
                     <a href="https://apps.apple.com/us/app/teddy-draw/id1488058982?ls=1">Teddy Draw</a>, on the App
-                    Store. I recently launched <a href="https://sqmgr.com/">SqMGR</a>.
+                    Store. I recently launched <a href="https://teamhex.dev/">Team Hex</a> and <a
+                            href="https://sqmgr.com/">SqMGR</a>.
             </div>
         </header>
 
@@ -54,7 +55,7 @@
         </nav>
 
         <svg class="chevron" viewBox="0 0 24 24">
-            <path d="" />
+            <path d=""/>
         </svg>
     </section>
     <div class="languages">
@@ -65,6 +66,9 @@
                 <p>I currently use Go for the majority of my personal and open-source projects.</p>
 
                 <ul>
+                    <li><strong><a href="https://github.com/weters/teamhex/">Team Hex</a></strong> is a service for
+                        looking up professional and collegiate teams' sports colors
+                    </li>
                     <li><strong><a href="https://github.com/sqmgr/sqmgr-api/">SqMGR</a></strong> is a site for managing
                         football squares pools.
                     </li>
@@ -98,14 +102,17 @@ func (s *SMJWT) Sign(claims jwt.Claims) (string, error) {
                     beautiful, mobile-friendly front-ends with Vue, React/Preact, and vanilla JS.</p>
 
                 <ul>
-                    <li><strong><a href="https://github.com/sqmgr/sqmgr-vue">SqMGR</a></strong> is a single-page
-                        application built using Vue.
+                    <li><strong><a href="https://github.com/weters/teamhex-vue">Team Hex</a></strong> is Vue application that
+                        utilizes the API I built to provide color data for professional and collegiate sports teams.
                     </li>
-                    <li><strong><a href="https://tocbuffalo.com/">Tournament of Champions</a></strong> was built using
-                        vanilla JS.
+                    <li><strong><a href="https://github.com/sqmgr/sqmgr-vue">SqMGR</a></strong> is a single-page
+                        application built using Vue that allows users to manage football pools. It too uses an API I wrote in Go.
+                    </li>
+                    <li><strong><a href="https://tocbuffalo.com/">Tournament of Champions</a></strong> is a simple site with a Go backend
+                        and a some plain-old vanilla JS for the front-end.
                     </li>
                     <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is a tool for measuring
-                        story point estimations in agile.
+                        story point estimations in agile, which was also written using vanilla JS.
                     </li>
                 </ul>
             </div>
@@ -134,10 +141,14 @@ func (s *SMJWT) Sign(claims jwt.Claims) (string, error) {
                 <p>I have two apps available on the App Store.</p>
 
                 <ul>
-                    <li><strong><a href="https://namesinahatapp.com">Names in a Hat</a></strong> is an app I started back in 2009 for
-					drawing randomized names. I've kept it up-to-date through the years to keep pace with Apple's best practices and aesthetics.</li>
+                    <li><strong><a href="https://namesinahatapp.com">Names in a Hat</a></strong> is an app I started
+                        back in 2009 for
+                        drawing randomized names. I've kept it up-to-date through the years to keep pace with Apple's
+                        best practices and aesthetics.
+                    </li>
                     <li><strong><a href="https://apps.apple.com/us/app/teddy-draw/id1488058982">Teddy Draw</a></strong>
-                        is a toddler drawing app I built so my son could draw without dealing with obnoxious ads and an overly complicated interface.
+                        is a toddler drawing app I built so my son could draw without dealing with obnoxious ads and an
+                        overly complicated interface.
                     </li>
                 </ul>
             </div>
@@ -211,8 +222,9 @@ $$;</pre>
             <div class="details">
                 <h2>Containers and Orchestration</h2>
 
-                <p>I'm a huge proponent of Docker and Kubernetes. I use GitHub Actions to test and build containers, and then
-				then deploy those images into a Kubernetes cluster.</p>
+                <p>I'm a huge proponent of Docker and Kubernetes. I use GitHub Actions to test and build containers, and
+                    then
+                    then deploy those images into a Kubernetes cluster.</p>
             </div>
             <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/Dockerfile">
 FROM golang:1.13 AS build-go
