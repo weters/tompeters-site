@@ -2,7 +2,7 @@ import './assets/dank-mono.css'
 import './assets/styles.scss'
 import './classes/ViewHeightObserver'
 import CodeWriter from "./classes/CodeWriter";
-import { mdiChevronDoubleDown as chevron } from "@mdi/js";
+import { mdiChevronDoubleDown as chevron, mdiSourceBranch } from "@mdi/js";
 
 const onLoad = () => {
     if (process.env.NODE_ENV === 'production') {
@@ -42,8 +42,10 @@ const onLoad = () => {
             if (src) {
                 const a = container.appendChild(document.createElement('a'))
                 a.href = src
-                const i = a.appendChild(document.createElement('i'))
-                i.classList.add('fas', 'fa-code-branch')
+                const svg = a.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'svg'))
+                svg.setAttribute('viewBox', '0 0 24 24')
+                const path = svg.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
+                path.setAttribute('d', mdiSourceBranch)
 
                 const span = a.appendChild(document.createElement('span'))
                 span.classList.add('view-source')
