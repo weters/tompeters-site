@@ -27,7 +27,7 @@ module.exports = {
             chunks: ['notFound'],
         }),
         new MiniCssExtractPlugin(),
-        new SitemapWebpackPlugin('https://taproom.us/', [ '/' ]),
+        new SitemapWebpackPlugin('https://tompeters.me/', [ '/' ]),
         new CopyWebpackPlugin([{
             from: 'public',
         }]),

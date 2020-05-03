@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: taproom
+  name: tompeters-site
   labels:
-    app: taproom
+    app: tompeters-site
   annotations:
     nginx.ingress.kubernetes.io/from-to-www-redirect: 'true'
 spec:
   rules:
-    - host: taproom.us
+    - host: tompeters.me
       http:
         paths:
           - backend:
-              serviceName: taproom
+              serviceName: tompeters-site
               servicePort: 80
             path: /
   tls:
     - hosts:
-        - taproom.us
-      secretName: tls-taproom
+        - tompeters.me
+      secretName: tls-tompeters

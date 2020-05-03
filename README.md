@@ -1,6 +1,6 @@
-# taproom
+# tompeters.me
 
-TAP/room is the personal site of Tom Peters.
+The personal site of Tom Peters.
 
 ## Basic Project Details
 
