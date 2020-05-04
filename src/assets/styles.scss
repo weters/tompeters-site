@@ -309,15 +309,15 @@ footer {
   transform: translateX(-50%);
   width:     50px;
   fill:      white;
-  filter: drop-shadow(2px 4px 4px black);
+  filter:    drop-shadow(2px 4px 4px black);
 }
 
 @keyframes pulse {
   from, 10%, 20%, to {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 
   5%, 15% {
-    transform: translateY(-5px);
+    transform: translate(-50%, -5px);
   }
 }
