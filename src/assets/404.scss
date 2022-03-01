@@ -26,7 +26,7 @@ header {
 
   h1 {
     font-weight: normal;
-    padding: $spacing/2 $spacing;
+    padding: calc(#{$spacing}/2) $spacing;
     @include env-padding($spacing);
   }
 }
