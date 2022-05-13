@@ -28,22 +28,24 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(),
         new SitemapWebpackPlugin('https://tompeters.me/', [ '/' ]),
-        new CopyWebpackPlugin([{
-            from: 'public',
-        }]),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: 'public'},
+            ],
+        }),
     ],
     devtool: 'inline-source-map',
     module: {
         rules: [
             {
                 test: /\.s?css$/,
-                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.jpg$/,
-                use: [ 'file-loader' ],
-            }
-        ]
+                test: /\.(jpg|png)$/,
+                type: 'asset/resource'
+            },
+        ],
     },
     entry: {
         main: './src/index.js',
