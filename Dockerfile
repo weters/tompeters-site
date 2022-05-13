@@ -1,4 +1,4 @@
-FROM node:11 AS node-build
+FROM node:17 AS node-build
 WORKDIR /build
 COPY package*.json ./
 RUN npm i
