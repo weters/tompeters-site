@@ -231,16 +231,21 @@ $$;</pre>
                     then
                     then deploy those images into a Kubernetes cluster.</p>
             </div>
-            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/Dockerfile">
-FROM golang:1.13 AS build-go
+            <pre class="code" data-src="https://github.com/weters/mondaynightpoker-server/blob/master/Dockerfile">
+FROM golang:1.18 AS build
 WORKDIR /build
-COPY go.* ./
+COPY go* ./
 RUN go mod download
-COPY cmd/ cmd/
-COPY internal/ internal/
-COPY pkg/ pkg/
-RUN CGO_ENABLED=0 GOOS=linux \
-    go build github.com/sqmgr/sqmgr-api/cmd/sqmgr-api
+COPY ./cmd/ ./cmd/
+COPY ./internal/ ./internal/
+COPY ./pkg/ ./pkg/
+ARG version
+RUN CGO_ENABLED=0 \
+    GOOS=linux \
+    go build \
+        -o server \
+        -ldflags "-X main.Version=$version" \
+        ./cmd/server
 
 FROM alpine:latest
 ...</pre>
