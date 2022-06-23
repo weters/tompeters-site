@@ -5,12 +5,6 @@ import CodeWriter from "./classes/CodeWriter";
 import { mdiChevronDoubleDown as chevron, mdiSourceBranch } from "@mdi/js";
 
 const onLoad = () => {
-    if (process.env.NODE_ENV === 'production') {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-        }
-    }
-
     document.querySelector('svg path').setAttribute('d', chevron)
 
     const observer = new IntersectionObserver((sections) => {

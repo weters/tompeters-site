@@ -50,6 +50,5 @@ module.exports = {
     entry: {
         main: './src/index.js',
         notFound: './src/404.js',
-        sw: './src/sw.js',
     },
 }
