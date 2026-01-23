@@ -1,4 +1,3 @@
-import './assets/dank-mono.css'
 import './assets/styles.scss'
 import './classes/ViewHeightObserver'
 import CodeWriter from "./classes/CodeWriter";

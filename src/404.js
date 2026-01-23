@@ -1,7 +1,6 @@
 import CodeWriter from "./classes/CodeWriter";
 import {sleep, shuffle} from './utils'
 import './assets/404.scss'
-import './assets/dank-mono.css'
 
 const onLoad = () => {
     const path = window.location.pathname.substr(1)

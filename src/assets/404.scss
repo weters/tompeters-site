@@ -1,100 +1,191 @@
-@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie|Roboto:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import './variables';
 
-* {
+*, *::before, *::after {
   padding: 0;
   margin: 0;
-  outline: none;
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-}
-
-header {
-  background-image: url('./drone.jpg');
-  background-size: cover;
-  background-position: center center;
-  padding: $spacing*3 0 $spacing;
-  margin-bottom: $spacing;
-
-  h1 {
-    font-weight: normal;
-    padding: calc(#{$spacing}/2) $spacing;
-    @include env-padding($spacing);
-  }
+  background-color: $bg-primary;
+  height: 100%;
 }
 
 body {
-  background-color: #111;
-  color: white;
+  color: $text-primary;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-code {
-  font-family: 'dm', monospace;
+a {
+  color: $accent-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $accent-secondary;
+  }
 }
 
-h1 {
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 3em;
-  background-color: rgba(33, 150, 243, 0.8);
+// Header
+header {
+  position: relative;
+  padding: $spacing-xl $spacing-lg $spacing-lg;
+  text-align: center;
+  overflow: hidden;
 
-  a {
-    color: white;
-    text-decoration: none;
+  @include env-padding($spacing-lg);
 
-    &:hover {
-      text-decoration: underline;
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./drone.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.2) saturate(0.5);
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, $bg-primary 100%);
+    z-index: 1;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 10;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+
+    a {
+      @include gradient-text;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
 
-h2 {
-  margin-bottom: $spacing;
-}
-
-footer {
-  padding: $spacing;
-  @include env-padding($spacing);
-}
-
-a {
-  color: $blue;
-}
-
+// Main content
 main {
-  background-color: $red;
-  padding: $spacing;
-  @include env-padding($spacing);
+  flex: 1;
+  padding: $spacing-lg;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
 
+  @include env-padding($spacing-lg);
+
+  @media (max-width: 768px) {
+    padding: $spacing-md;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    &::before {
+      content: '404';
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $bg-primary;
+      background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $radius-sm;
+    }
+  }
+
+  // Console styling
   div.console {
-    background-color: #111;
-    color:            #ddd;
-    padding:          $spacing;
-    border-radius:    5px;
+    background: $bg-card;
+    border: 1px solid $glass-border;
+    border-radius: $radius-lg;
+    padding: $spacing-md;
+    overflow: hidden;
 
     div.item {
       display: none;
     }
 
     pre {
-      font-family: 'dm', monospace;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
       white-space: pre-wrap;
+      line-height: 1.7;
+      color: $text-secondary;
+
+      @media (max-width: 600px) {
+        font-size: 0.75rem;
+      }
+    }
+
+    pre.command {
+      color: $text-muted;
+      margin-bottom: $spacing-sm;
     }
 
     pre.output {
       opacity: 0;
-    }
+      color: $text-secondary;
 
-    pre.output {
       span.error {
-        color: $red;
+        color: #ef4444;
+        font-weight: 500;
+      }
+
+      strong {
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  padding: $spacing-lg;
+  text-align: center;
+  border-top: 1px solid $glass-border;
+
+  @include env-padding($spacing-lg);
+
+  p {
+    color: $text-secondary;
+    font-size: 0.9375rem;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: $text-muted;
+
+    a {
+      color: $accent-primary;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

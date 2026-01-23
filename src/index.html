@@ -3,13 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta charset="UTF-8">
-    <title>Tom Peters</title>
-    <meta name="description" content="Tom Peters is a software developer from Buffalo, NY.">
-    <meta property="og:title" content="Tom Peters, software developer/architect">
-    <meta property="og:description" content="Tom Peters is a software developer from Buffalo, NY.">
+    <title>Tom Peters | Software Developer & Product Manager</title>
+    <meta name="description" content="Tom Peters is a software developer and product manager from Buffalo, NY, specializing in Go, Kubernetes, and building great products.">
+    <meta property="og:title" content="Tom Peters | Software Developer & Product Manager">
+    <meta property="og:description" content="Software developer and product manager from Buffalo, NY, specializing in Go, Kubernetes, and building great products.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tompeters.me/">
     <meta property="og:image" content="https://tompeters.me/ogp.png">
+    <meta name="theme-color" content="#0a0a0b">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,6 +21,7 @@
             "@context": "http://schema.org",
             "@type": "Person",
             "name": "Tom Peters",
+            "jobTitle": "Software Developer & Product Manager",
             "url": "https://tompeters.me/",
             "sameAs": [
                 "https://github.com/weters",
@@ -33,232 +35,202 @@
 <body>
 <main>
     <section class="hero">
-        <header>
-            <div class="content">
-                <h1>Tom Peters</h1>
-
-                <p>I'm Tom Peters, a software dev and product manager from Buffalo, NY. Some technologies I currently love are Go and
-                    Kubernetes. You can download my apps, <a
-                            href="https://apps.apple.com/us/app/names-in-a-hat/id310533991?ls=1">Names in a Hat</a> and
-                    <a href="https://apps.apple.com/us/app/teddy-draw/id1488058982?ls=1">Teddy Draw</a>, on the App
-                    Store. I recently launched <a href="https://mondaynight.bid/">Monday Night Poker</a>, <a href="https://teamhex.dev/">Team Hex</a> and <a
-                            href="https://sqmgr.com/">SqMGR</a>.
-            </div>
-        </header>
-
         <nav>
             <ul>
-                <li><a href="https://github.com/weters">GitHub</a>
-                <li><a href="https://linkedin.com/in/thomas-peters">LinkedIn</a>
-                <li><a href="https://twitter.com/weters">Twitter</a>
-                <li><a href="https://keybase.io/weters">Keybase</a>
+                <li><a href="https://github.com/weters">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/thomas-peters">LinkedIn</a></li>
+                <li><a href="https://x.com/weters">X</a></li>
             </ul>
         </nav>
 
-        <svg class="chevron" viewBox="0 0 24 24">
+        <header>
+            <div class="content">
+                <h1>Tom Peters</h1>
+                <p>Software developer and product manager from Buffalo, NY. I build products people love using. Huge fan of <a href="#go">Go</a>. Creator of <a href="https://sqmgr.com/">SqMGR</a>, <a href="https://apps.apple.com/us/app/names-in-a-hat/id310533991?ls=1">Names in a Hat</a>, and <a href="https://mondaynight.bid/">Monday Night Poker</a>.</p>
+            </div>
+        </header>
+
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
             <path d=""/>
         </svg>
     </section>
+
     <div class="languages">
-        <section class="language go">
+        <section class="language go" id="go">
             <div class="details">
                 <h2>Go</h2>
-
-                <p>I currently use Go for the majority of my personal and open-source projects.</p>
-
+                <p>My primary language for building reliable, performant backend services and APIs.</p>
                 <ul>
-                    <li><strong><a href="github.com/weters/mondaynightpoker-server/">Monday Night Poker</a></strong> is an online poker site for player dealer's choice style poker games with your friends.
-
-                    </li>
-                    <li><strong><a href="https://github.com/weters/teamhex/">Team Hex</a></strong> is a service for
-                        looking up professional and collegiate teams' sports colors
-                    </li>
-                    <li><strong><a href="https://github.com/sqmgr/sqmgr-api/">SqMGR</a></strong> is a site for managing
-                        football squares pools.
-                    </li>
-                    <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is an application for
-                        agile scrum planning sessions.
-                    </li>
-                    <li><strong><a href="https://github.com/synacor/argon2id">argon2id</a></strong> is an open-source
-                        library for hashing passwords using Argon.
-                    </li>
-                    <li><strong><a href="https://github.com/weters/pwned">pwned</a></strong> is a library for checking
-                        if a user's password has been compromised using the haveibeenpwned service.
-                    </li>
+                    <li><strong><a href="https://github.com/sqmgr/sqmgr-api/">SqMGR</a></strong> is a platform for managing football squares pools.</li>
+                    <li><strong><a href="https://github.com/weters/mondaynightpoker-server/">Monday Night Poker</a></strong> is an online poker site for dealer's choice style games with friends.</li>
+                    <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is an application for agile scrum planning sessions.</li>
+                    <li><strong><a href="https://github.com/synacor/argon2id">argon2id</a></strong> is an open-source library for secure password hashing.</li>
+                    <li><strong><a href="https://github.com/weters/pwned">pwned</a></strong> checks passwords against the haveibeenpwned database.</li>
                 </ul>
             </div>
-            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/pkg/smjwt/smjwt.go#L85">// Sign will sign the JWT claims.
-// You MUST call LoadPrivateKey() first
-func (s *SMJWT) Sign(claims jwt.Claims) (string, error) {
-  if s.privateKey == nil {
-    return "", ErrNoPrivateKeySpecified
-  }
+            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/internal/server/ratelimit.go#L83">func (l *RateLimiter) Limit(next http.Handler) http.Handler {
+  return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    ip := getIP(r)
+    limiter := l.getVisitor(ip)
 
-  token := jwt.NewWithClaims(jwt.SigningMethodRS256, claims)
-  return token.SignedString(s.privateKey)
-}</pre>
-        </section>
-        <section class="language javascript">
-            <div class="details">
-                <h2>JavaScript</h2>
-
-                <p>The bulk of my professional experience has been writing backend services, but I also enjoy building
-                    beautiful, mobile-friendly front-ends with Vue, React/Preact, and vanilla JS.</p>
-
-                <ul>
-                    <li><strong><a href="https://github.com/weters/teamhex-vue">Team Hex</a></strong> is Vue application that
-                        utilizes the API I built to provide color data for professional and collegiate sports teams.
-                    </li>
-                    <li><strong><a href="https://github.com/sqmgr/sqmgr-vue">SqMGR</a></strong> is a single-page
-                        application built using Vue that allows users to manage football pools. It too uses an API I wrote in Go.
-                    </li>
-                    <li><strong><a href="https://tocbuffalo.com/">Tournament of Champions</a></strong> is a simple site with a Go backend
-                        and a some plain-old vanilla JS for the front-end.
-                    </li>
-                    <li><strong><a href="https://github.com/synacor/sibyl">Sibyl</a></strong> is a tool for measuring
-                        story point estimations in agile, which was also written using vanilla JS.
-                    </li>
-                    <li>You can also view the source of <strong><a href="https://github.com/weters/tompeters-site">this site</a></strong>, which was written using vanilla JS and packaged using webpack.</li>
-                </ul>
-            </div>
-            <pre class="code"
-                 data-src="https://github.com/sqmgr/sqmgr-vue/blob/master/src/register-service-worker.js#L20">navigator.serviceWorker.register('/sw.js')
-  .then(reg => {
-    reg.addEventListener("updatefound", () => {
-      if (!navigator.serviceWorker.controller) {
-        return
-      }
-
-      const worker = reg.installing
-      worker.addEventListener("statechange", () => {
-        if (worker.state === "installed") {
-          bus.$emit('refresh-needed')
-        }
-      })
-    })
-  })</pre>
-        </section>
-
-        <section class="language swift">
-            <div class="details">
-                <h2>Swift</h2>
-
-                <p>I have two apps available on the App Store.</p>
-
-                <ul>
-                    <li><strong><a href="https://namesinahatapp.com">Names in a Hat</a></strong> is an app I started
-                        back in 2009 for
-                        drawing randomized names. I've kept it up-to-date through the years to keep pace with Apple's
-                        best practices and aesthetics.
-                    </li>
-                    <li><strong><a href="https://apps.apple.com/us/app/teddy-draw/id1488058982">Teddy Draw</a></strong>
-                        is a toddler drawing app I built so my son could draw without dealing with obnoxious ads and an
-                        overly complicated interface.
-                    </li>
-                </ul>
-            </div>
-            <pre class="code">@IBInspectable var isSelected: Bool = false {
-    didSet {
-        if isSelected {
-            self.checkmark.transform =
-                CGAffineTransform(scaleX: 0.2, y: 0.2)
-        }
-
-        UIView.animate(withDuration: 0.25, animations: {
-            if self.isSelected {
-                self.checkmark.transform = .identity
-                self.checkmark.alpha = 1
-                self.checkmark.isHidden = false
-            // ...</pre>
-        </section>
-
-        <section class="language perl">
-            <div class="details">
-                <h2>Perl</h2>
-
-                <p>I have over 15 years of experience writing highly performant, modern Perl.</p>
-
-                <ul>
-                    <li>Built RESTful APIs that serve billions of requests per month using Apache Solr and Cassandra.
-                    </li>
-                    <li>Built an ETL system for ingesting movies, tv shows, and news from thousands of sources.</li>
-                    <li>Open sourced <code>Test::MockPackages</code>, which assists in unit test development.</li>
-                </ul>
-            </div>
-            <pre class="code"
-                 data-src="https://github.com/synacor/test-mockpackages/blob/master/lib/Test/MockPackages/Mock.pm#L140">sub called {
-    my ( $self, $called ) = @ARG;
-
-    if ( !looks_like_number( $called ) || $called &lt; -1 ) {
-        croak( '$called must be an integer &gt;= -1' );
+    if !limiter.Allow() {
+      http.Error(w, http.StatusText(http.StatusTooManyRequests),
+        http.StatusTooManyRequests)
+      return
     }
 
-    $self-&gt;{_called} = $called;
-
-    return $self-&gt;_validate();
+    next.ServeHTTP(w, r)
+  })
 }</pre>
         </section>
 
-        <section class="language databases">
+        <section class="language javascript" id="javascript">
             <div class="details">
-                <h2>Databases</h2>
-
-                <p>PostgreSQL is my go-to RDBMS. I also have experience with MySQL/MariaDB, as well non-relational
-                    DBs like Solr (search), Riak (key/value), and Cassandra (columnar).</p>
+                <h2>JavaScript</h2>
+                <p>Building beautiful, mobile-friendly front-ends with Vue, React, and vanilla JS.</p>
+                <ul>
+                    <li><strong><a href="https://github.com/sqmgr/sqmgr-vue">SqMGR</a></strong> is a single-page application built with Vue for managing football pools.</li>
+                    <li><strong><a href="https://tocbuffalo.com/">Tournament of Champions</a></strong> features a Go backend with vanilla JS frontend.</li>
+                    <li><strong><a href="https://github.com/weters/tompeters-site">This site</a></strong> was built with vanilla JS and webpack.</li>
+                </ul>
             </div>
-            <pre class="code"
-                 data-src="https://github.com/sqmgr/sqmgr-api/blob/master/sql/0002_adds_functions.up.sql#L43">CREATE FUNCTION new_token(_token text) RETURNS boolean
-  LANGUAGE plpgsql
-AS $$
-BEGIN
-  LOCK TABLE tokens IN SHARE UPDATE EXCLUSIVE MODE;
-  PERFORM 1 FROM tokens WHERE token = _token;
-  IF FOUND THEN
-    RETURN FALSE;
-  END IF;
+            <pre class="code" data-src="https://github.com/weters/mondaynightpoker-vue/blob/master/src/webSocket.js#L18">send(action, subject, cards, additionalData) {
+  const context = uuid()
+  this.ws.send(JSON.stringify({
+    action, subject, cards, additionalData, context,
+  }))
 
-  INSERT INTO tokens (token) VALUES (_token);
-  RETURN TRUE;
-END;
-$$;</pre>
+  return new Promise((resolve, reject) =&gt; {
+    const timeout = setTimeout(() =&gt; {
+      reject('did not receive response from server')
+      delete(this.context[context])
+    }, 2000)
+
+    this.context[context] = { resolve, reject, timeout }
+  })
+}</pre>
         </section>
 
-        <section class="language containers">
+        <section class="language swift" id="swift">
             <div class="details">
-                <h2>Containers and Orchestration</h2>
-
-                <p>I'm a huge proponent of Docker and Kubernetes. I use GitHub Actions to test and build containers, and
-                    then
-                    then deploy those images into a Kubernetes cluster.</p>
+                <h2>Swift</h2>
+                <p>Two apps on the App Store, kept current with Apple's best practices.</p>
+                <ul>
+                    <li><strong><a href="https://namesinahatapp.com">Names in a Hat</a></strong> is a randomized name drawing app I've maintained since 2009.</li>
+                    <li><strong><a href="https://apps.apple.com/us/app/teddy-draw/id1488058982">Teddy Draw</a></strong> is a toddler-friendly drawing app with no ads or complicated UI.</li>
+                </ul>
             </div>
-            <pre class="code" data-src="https://github.com/weters/mondaynightpoker-server/blob/master/Dockerfile">
-FROM golang:1.18 AS build
-WORKDIR /build
-COPY go* ./
-RUN go mod download
-COPY ./cmd/ ./cmd/
-COPY ./internal/ ./internal/
-COPY ./pkg/ ./pkg/
-ARG version
-RUN CGO_ENABLED=0 \
-    GOOS=linux \
-    go build \
-        -o server \
-        -ldflags "-X main.Version=$version" \
-        ./cmd/server
+            <pre class="code">// Draw all names ahead of time to avoid the scenario
+// where the last two names are the same person
+func drawForSecretSanta() {
+  outerLoop: while true {
+    resetDraw()
+    var secretSantaResults = [DrawingResult]()
+    for name in hat.names {
+      while true {
+        guard let result = super.draw() else {
+          fatalError("could not call draw()")
+        }
+        if name != result.name {
+          result.giverName = name
+          secretSantaResults.append(result)
+          break
+        }
+        if super.isComplete() { continue outerLoop }
+        guard super.undoDraw() else {
+          fatalError("could not undoDraw()")
+        }
+      }
+    }
+    // ...</pre>
+        </section>
 
-FROM alpine:latest
-...</pre>
+        <section class="language perl" id="perl">
+            <div class="details">
+                <h2>Perl</h2>
+                <p>Over 15 years of experience writing highly performant, modern Perl.</p>
+                <ul>
+                    <li>Built RESTful APIs serving billions of requests per month using Apache Solr and Cassandra.</li>
+                    <li>Built an ETL system for ingesting movies, TV shows, and news from thousands of sources.</li>
+                    <li>Open sourced <code>Test::MockPackages</code> for unit test development.</li>
+                </ul>
+            </div>
+            <pre class="code" data-src="https://github.com/synacor/test-mockpackages/blob/master/lib/Test/MockPackages/Mock.pm#L140">sub called {
+  my ( $self, $called ) = @ARG;
+
+  if ( !looks_like_number( $called ) || $called &lt; -1 ) {
+    croak( '$called must be an integer &gt;= -1' );
+  }
+
+  $self-&gt;{_called} = $called;
+
+  return $self-&gt;_validate();
+}</pre>
+        </section>
+
+        <section class="language databases" id="databases">
+            <div class="details">
+                <h2>Databases</h2>
+                <p>PostgreSQL is my go-to RDBMS, with experience in MySQL/MariaDB, Solr, Riak, and Cassandra.</p>
+            </div>
+            <pre class="code" data-src="https://github.com/weters/mondaynightpoker-server/blob/master/sql/0001_initial.up.sql#L64">CREATE FUNCTION adjust_balance(
+  _players_tables_id bigint, _current_balance int,
+  _adjustment int, _game_id bigint, _reason text
+) RETURNS boolean LANGUAGE plpgsql AS $$
+DECLARE
+  _previous_balance int;
+  _next_balance int;
+BEGIN
+  SELECT INTO _previous_balance balance
+    FROM players_tables WHERE id = _players_tables_id FOR UPDATE;
+
+  IF _previous_balance != _current_balance THEN
+    RAISE EXCEPTION 'balance has changed';
+  END IF;
+
+  _next_balance := _previous_balance + _adjustment;
+  INSERT INTO players_tables_transactions (...) VALUES (...);
+  UPDATE players_tables SET balance = _next_balance WHERE id = _players_tables_id;
+  RETURN TRUE;
+END; $$;</pre>
+        </section>
+
+        <section class="language containers" id="containers">
+            <div class="details">
+                <h2>Containers & Orchestration</h2>
+                <p>Docker and Kubernetes advocate. Using GitHub Actions for CI/CD pipelines.</p>
+            </div>
+            <pre class="code" data-src="https://github.com/sqmgr/sqmgr-api/blob/master/k8s/deployment.yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqmgr-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: sqmgr
+          image: ghcr.io/sqmgr/sqmgr-api:latest
+          args: ['-migrate']
+          envFrom:
+            - secretRef:
+                name: sqmgr-config
+          volumeMounts:
+            - mountPath: /opt/sqmgr/jwt-keys
+              name: jwt-keys
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /
+      volumes:
+        - name: jwt-keys
+          secret:
+            secretName: sqmgr-jwt-keys</pre>
         </section>
     </div>
 </main>
-<footer>
-    <p>You can find me online here: <a href="https://github.com/weters">GitHub</a>,
-        <a href="https://linkedin.com/in/thomas-peters">LinkedIn</a>,
-        <a href="https://twitter.com/weters">Twitter</a>, and
-        <a href="https://keybase.io/weters">Keybase</a>.
-    </p>
 
+<footer>
+    <p>Let's connect: <a href="https://github.com/weters">GitHub</a> <span aria-hidden="true">/</span> <a href="https://linkedin.com/in/thomas-peters">LinkedIn</a> <span aria-hidden="true">/</span> <a href="https://x.com/weters">X</a></p>
     <p class="version"><a href="https://github.com/weters/tompeters-site"><%= version %></a></p>
 </footer>
 </body>
