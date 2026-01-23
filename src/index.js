@@ -50,6 +50,9 @@ const onLoad = () => {
         })
 }
 
+// Set version in footer
+document.getElementById('version-link').textContent = __VERSION__
+
 if (document.readyState === 'loading') {
     window.addEventListener('DOMContentLoaded', onLoad)
 } else {

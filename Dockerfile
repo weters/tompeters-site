@@ -1,8 +1,9 @@
-FROM node:17 AS node-build
+FROM node:20 AS node-build
 WORKDIR /build
 COPY package*.json ./
 RUN npm i
-COPY webpack.*.js ./
+COPY vite.config.js ./
+COPY index.html 404.html ./
 COPY src/ ./src/
 COPY public/ ./public/
 ARG version
