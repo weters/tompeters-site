@@ -32,11 +32,13 @@ jobs:
         docker tag $IMAGE:$VERSION $IMAGE:latest
 
     - name: Docker Push
+      if: startsWith(github.ref, 'refs/tags/v')
       run: |
         docker push $IMAGE:$VERSION
         docker push $IMAGE:latest
 
     - name: Kubernetes Deploy
+      if: startsWith(github.ref, 'refs/tags/v')
       uses: actions-hub/kubectl@master
       env:
         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
@@ -44,6 +46,7 @@ jobs:
         args: set image deploy tompeters-site tompeters-site=${{ env.IMAGE }}:${{ env.VERSION }} --record
 
     - name: Kubernetes Rollout Status
+      if: startsWith(github.ref, 'refs/tags/v')
       uses: actions-hub/kubectl@master
       env:
         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
