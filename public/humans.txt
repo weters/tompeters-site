@@ -1,8 +1,18 @@
-/// SITE INFORMATION
+/* ME */
 
-    Author: Thomas Peters
+    Tom Peters
+    Site: https://tompeters.me
     GitHub: https://github.com/weters
-    Twitter: https://twitter.com/weters
     LinkedIn: https://linkedin.com/in/thomas-peters
-    Location: Getzville, NY, USA
-    Technologies: HTML, CSS/SCSS, JavaScript, webpack, Workbox, GitHub Actions, Docker, Kubernetes
+    X: https://x.com/weters
+    Location: Buffalo, NY, USA
+
+/* SITE */
+
+    Built with: HTML, SCSS, JavaScript, Vite
+    Last updated: 2025-01-22
+
+/* THANKS */
+
+    Material Design Icons: https://materialdesignicons.com
+    Dank Mono: https://philpl.gumroad.com/l/dank-mono
